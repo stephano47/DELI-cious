@@ -16,18 +16,20 @@ public class Order {
             int userChoice = scanner.nextInt();
             switch (userChoice) {
                 case 1:
-                    System.out.println("Sandwich");
+                    Sandwich.addSandwich();
                     break;
                 case 2:
                     System.out.println("Drink");
                     break;
                 case 3:
-                    System.out.println("Chips");
+                    System.out.println("Chips"); // Chips are $1.50
                 case 4:
-                    System.out.println("Checkout");
+                    System.out.println("Checkout"); /* will need a file writer and time utility somewhere get
+                    the time of the receipt and whatever else is needed*/
                     break;
                 case 0:
-                    return;
+                    return; /* just return to the main class
+                    (will also need to delete entire order if one was made)*/
                 default:
                     System.out.println("Please type one of the numbers in the parentheses! ()");
             }
