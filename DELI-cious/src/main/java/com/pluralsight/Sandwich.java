@@ -2,9 +2,9 @@ package com.pluralsight;
 import java.util.*;
 public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
 
-    public static void  addSandwich(){
+     static void  addSandwich(){
         Scanner scanner = new Scanner(System.in);
-        // Bread Selection
+        //--------- Bread Selection
         String whiteBread = "White Bread Sandwich";
         String wheatBread = "Wheat Bread Sandwich";
         String ryeBread = "Rye Bread Sandwich";
@@ -21,7 +21,7 @@ public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
         }else if (breadChoice.equalsIgnoreCase("Wrap")||(breadChoice.equalsIgnoreCase("Wr"))) {
             System.out.println(wrapBread);
         }
-        // Sandwich Size Selection
+        //-------- Sandwich Size Selection
         System.out.println("Please choose the size of the Sandwich");
         System.out.println("(S) Small\n" + "(M) Medium\n" +"(L) Large");//
         double sandwichSmall = 5.50; //first we ask for the size, then the bread, then toppings, add them all together and
@@ -36,10 +36,9 @@ public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
         }else if (sandwichSize.equalsIgnoreCase("Large")||(sandwichSize.equalsIgnoreCase("L"))) {
             System.out.println("Current Price: "+sandwichLarge);
         }
-        // Topping Selection
-        System.out.println("Please choose the number dedicated to the regular toppings you would like.\n" + "Note: The Regular Toppings are Free!");
+        // Decided to only have the call method in the sandwich class.
         Topping.regular();//calls the regular topping method
-        String toppingChoice = scanner.nextLine();
+
 /*Regulars are free (does not need variables) will ask user what toppings they want in a do while loop
 if they choose one topping more than once the system should advise them that it was picked already*/
 
