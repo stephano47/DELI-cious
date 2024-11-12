@@ -27,8 +27,8 @@ public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
         double sandwichSmall = 5.50; //first we ask for the size, then the bread, then toppings, add them all together and
         double sandwichMedium = 7.00;
         double sandwichLarge = 8.50;
-        String sandwichSize = scanner.nextLine(); /*Will try to use switch statements
-         to allow user to choose options to their preference - Toppings are not at a set price for each sandwich size*/
+        String sandwichSize = scanner.nextLine(); /*Will try to use switch statements to allow user to choose options to their preference - Toppings are not at a set price for each sandwich size*/
+        ReceiptHandler.receiptWriter();
         if (sandwichSize.equalsIgnoreCase("Small") || (sandwichSize.equalsIgnoreCase("S"))){
             System.out.println("Current Price: "+sandwichSmall);//should make another variable to store the doubles
         } else if (sandwichSize.equalsIgnoreCase("Medium")||(sandwichSize.equalsIgnoreCase("M"))) {
@@ -37,6 +37,9 @@ public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
             System.out.println("Current Price: "+sandwichLarge);
         }
         // Topping Selection
+        System.out.println("Please choose the number dedicated to the regular toppings you would like.\n" + "Note: The Regular Toppings are Free!");
+        Topping.regular();//calls the regular topping method
+        String toppingChoice = scanner.nextLine();
 /*Regulars are free (does not need variables) will ask user what toppings they want in a do while loop
 if they choose one topping more than once the system should advise them that it was picked already*/
 
