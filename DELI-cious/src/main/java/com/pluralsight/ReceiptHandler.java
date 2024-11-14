@@ -12,14 +12,14 @@ public class ReceiptHandler {
         try {
 
             LocalDateTime now = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHH:mm:ss");
             String formattedDateTime = now.format(formatter);
             String fileName = formattedDateTime + ".txt";
             FileWriter writer = new FileWriter(fileName);
-            writer.write("Hello");
+            writer.write("now");
             writer.close();
 
-            System.out.println("File created: " + fileName);
+            System.out.println("Receipt Made!: " + fileName);
 
         } catch (IOException e) {
             e.printStackTrace();
