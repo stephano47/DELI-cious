@@ -24,10 +24,10 @@ public class Order {
                     breadAdd();
                     break;
                 case 2:
-                    System.out.println("Drink");
+                    OrderDrink.drinkMenu();
                     break;
                 case 3:
-                    System.out.println("Chips"); // Chips are $1.50
+                    OrderChips.chipMenu(); // Chips are $1.50
                 case 4:
                     System.out.println("Checkout"); /* will need a file writer and time utility somewhere get
                     the time of the receipt and whatever else is needed*/
@@ -73,21 +73,24 @@ public class Order {
         //-------- Sandwich Size Selection
         Sandwich sandwich = new Sandwich();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please choose the size of the Sandwich");
-        System.out.println("(S) Small\n" + "(M) Medium\n" + "(L) Large");//
+        System.out.println("Please choose the size of the Sandwich ");
+        System.out.println("(4) Small\n" + "(8) Medium\n" + "(12) Large");//
         double sandwichSmall = 5.50; //first we ask for the size, then the bread, then toppings, add them all together and
         double sandwichMedium = 7.00;
         double sandwichLarge = 8.50;
-        String sandwichSize = scanner.nextLine(); /*Will try to use switch statements to allow user to choose options to their preference - Toppings are not at a set price for each sandwich size*/
-        if (sandwichSize.equalsIgnoreCase("Small") || (sandwichSize.equalsIgnoreCase("S"))) {
-            System.out.println("Current Price: " + sandwichSmall);//should make another variable to store the doubles
-        } else if (sandwichSize.equalsIgnoreCase("Medium") || (sandwichSize.equalsIgnoreCase("M"))) {
-            System.out.println("Current Price: " + sandwichMedium);
-        } else if (sandwichSize.equalsIgnoreCase("Large") || (sandwichSize.equalsIgnoreCase("L"))) {
-            System.out.println("Current Price: " + sandwichLarge);
+        int sandwichSize = scanner.nextInt(); /*Will try to use switch statements to allow user to choose options to their preference - Toppings are not at a set price for each sandwich size*/
+        switch (sandwichSize){
+            case 4:
+                System.out.println("Current Price: " + sandwichSmall);
+                break;
+            case 8:
+                System.out.println("Current Price: " + sandwichMedium);
+                break;
+            case 12:
+                System.out.println("Current Price: " + sandwichLarge);
+                break;
 
-        }
-        sandwich.setSize(Integer.parseInt(sandwichSize));
+        }sandwich.setSize(sandwichSize);
         Topping.regular();//calls the regular topping method
     }
 
@@ -95,14 +98,16 @@ public class Order {
         Sandwich sandwich = new Sandwich();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like your Sandwich Toasted?");
-        System.out.println("Yes\n " + "No");
+        System.out.println("Yes\n"+"No");
         String isToasted = scanner.nextLine();
         sandwich.setToasted(isToasted);
-        if (isToasted.equalsIgnoreCase("Yes") || (isToasted.equalsIgnoreCase("S"))) {
-            System.out.println("Your Sandwich Will be toasted\n " + "Order Complete!");//should make another variable to store the doubles
+        if (isToasted.equalsIgnoreCase("Yes") || (isToasted.equalsIgnoreCase("Y"))) {
+            System.out.println("Your Sandwich Will be toasted\n " + "Your Sandwich was added to cart!");//should make another variable to store the doubles
+            ReceiptHandler.receiptWriter();
             OrderMenu();
-        } else if (isToasted.equalsIgnoreCase("Medium") || (isToasted.equalsIgnoreCase("M"))) {
-            System.out.println("Order Complete!");
+        } else if (isToasted.equalsIgnoreCase("No") || (isToasted.equalsIgnoreCase("N"))) {
+            System.out.println("Your Sandwich was added to cart!");
+            ReceiptHandler.receiptWriter();
             OrderMenu();
 
         }

@@ -124,7 +124,7 @@ public static void premium(){
 
         }while (true);
     } else if (premiumOption.equalsIgnoreCase("No")||(premiumOption.equalsIgnoreCase("N"))) {
-     Order.OrderMenu();
+     Order.toastedOption();
     }
 
 }
