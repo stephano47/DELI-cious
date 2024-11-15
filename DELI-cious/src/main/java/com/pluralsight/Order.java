@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Order {
+
     public static void OrderMenu() {
         Scanner scanner = new Scanner(System.in); //basically a copy of the main class
         do {
@@ -42,6 +43,7 @@ public class Order {
     }
 
     public static void breadAdd() {
+        Sandwich sandwich = new Sandwich();
         Scanner scanner = new Scanner(System.in);
         //--------- Bread Selection
         String whiteBread = "White Bread Sandwich";
@@ -51,6 +53,8 @@ public class Order {
         System.out.println("What bread would you like?");
         System.out.println("[ White ]\n" + "[ Wheat ]\n" + "[ Rye ]\n" + "[ Wrap ]\n");
         String breadChoice = scanner.nextLine();
+
+
         if (breadChoice.equalsIgnoreCase("White") || (breadChoice.equalsIgnoreCase("W"))) {
             System.out.println(whiteBread);//should make another variable to store the doubles
         } else if (breadChoice.equalsIgnoreCase("Wheat") || (breadChoice.equalsIgnoreCase("Wh"))) {
@@ -61,11 +65,13 @@ public class Order {
             System.out.println(wrapBread);
 
         }
+        sandwich.setBread(breadChoice);
         sizeMenu();
     }
 
     public static void sizeMenu() {
         //-------- Sandwich Size Selection
+        Sandwich sandwich = new Sandwich();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please choose the size of the Sandwich");
         System.out.println("(S) Small\n" + "(M) Medium\n" + "(L) Large");//
@@ -81,32 +87,27 @@ public class Order {
             System.out.println("Current Price: " + sandwichLarge);
 
         }
-
-        try {
-
-            LocalDateTime now = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-[HHmmss]");
-            String formattedDateTime = now.format(formatter);
-            String fileName = formattedDateTime + ".txt";
-            FileWriter writer = new FileWriter(fileName);
-            writer.write(sandwichSize);
-            writer.close();
-
-            System.out.println("Receipt Made!: " + fileName);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sandwich.setSize(Integer.parseInt(sandwichSize));
         Topping.regular();//calls the regular topping method
+    }
 
-        //ReceiptHandler.receiptWriter();
+    public static void toastedOption() {
+        Sandwich sandwich = new Sandwich();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like your Sandwich Toasted?");
+        System.out.println("Yes\n " + "No");
+        String isToasted = scanner.nextLine();
+        sandwich.setToasted(isToasted);
+        if (isToasted.equalsIgnoreCase("Yes") || (isToasted.equalsIgnoreCase("S"))) {
+            System.out.println("Your Sandwich Will be toasted\n " + "Order Complete!");//should make another variable to store the doubles
+            OrderMenu();
+        } else if (isToasted.equalsIgnoreCase("Medium") || (isToasted.equalsIgnoreCase("M"))) {
+            System.out.println("Order Complete!");
+            OrderMenu();
 
-
-
-
+        }
     }
 }
-
 
 
 

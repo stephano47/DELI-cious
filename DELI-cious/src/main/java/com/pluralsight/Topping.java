@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class Topping {
 
     public static void regular(){
+        Sandwich sandwich = new Sandwich();
         Scanner scanner = new Scanner(System.in);
         do {
-            String[] regularToppings = {"Lettuce", "Peppers", "Onions", "Tomatoes", "Jalepenos", "Cucumbers", "Pickles", "Guacamole", "Mushrooms"};
+            String[] regularToppings = {"Lettuce", "Peppers", "Onions", "Tomatoes", "Jalapenos", "Cucumbers", "Pickles", "Guacamole", "Mushrooms"};
             System.out.println("Please choose the number dedicated to the regular toppings you would like.\n" + "Note: The Regular Toppings are Free!");
             System.out.println("1- " + regularToppings[0]);
             System.out.println("2- " + regularToppings[1]);
@@ -20,7 +21,7 @@ public class Topping {
             System.out.println("9- " + regularToppings[8]);
             System.out.println("10- Next");
             int regTopping = scanner.nextInt();
-
+            sandwich.setTopping(String.valueOf(regTopping));
             switch (regTopping) {
                 case 1:
                     System.out.println("1");
@@ -59,6 +60,7 @@ public class Topping {
 }
 public static void premium(){
         Scanner scanner = new Scanner(System.in);
+        Sandwich sandwich = new Sandwich();
         System.out.println("Would you like Cheese or Meat on your Sandwich? \n" +"Note: Meat and Cheese Toppings are additional fees");
         System.out.println("Yes/No");
         String premiumOption = scanner.nextLine();
@@ -81,6 +83,7 @@ public static void premium(){
             System.out.println("10- "+ premiumToppings[9]);
             System.out.println("11- Next");
             int prmTopping = scanner.nextInt();
+            sandwich.setTopping(String.valueOf(prmTopping));
             switch (prmTopping) {
                 case 1:
                     System.out.println("1");
@@ -113,7 +116,7 @@ public static void premium(){
                     System.out.println("10");
                     break;
                 case 11:
-                    Order.OrderMenu();
+                    Order.toastedOption();
                     break;
                 default:
                     System.out.println("Sorry That is not an option please enter one of the numbers according to your desired topping.");

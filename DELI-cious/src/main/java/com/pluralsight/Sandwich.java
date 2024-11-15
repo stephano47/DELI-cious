@@ -1,59 +1,60 @@
 package com.pluralsight;
-import java.util.*;
+
 public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
-
-
-
     private int size;
     private String bread;
     private String topping;
     private String sauces;
-    private boolean toasted;
+    private String toasted;
+    Sandwich(){
+        this.size = size;
+        this.bread = bread;
+        this.topping = topping;
+        this.sauces = sauces;
+        this.toasted = toasted;
+    }
 
     public int getSize() {
         return size;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public boolean isToasted() {
+    public String getToasted() {
         return toasted;
-    }
-
-    public void setToasted(boolean toasted) {
-        this.toasted = toasted;
     }
 
     public String getSauces() {
         return sauces;
     }
 
-    public void setSauces(String sauces) {
-        this.sauces = sauces;
-    }
-
     public String getTopping() {
         return topping;
-    }
-
-    public void setTopping(String topping) {
-        this.topping = topping;
     }
 
     public String getBread() {
         return bread;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     public void setBread(String bread) {
         this.bread = bread;
     }
 
-    // Decided to only have the call method in the sandwich class.
-    Sandwich(int Size, String Bread, String Topping, String Sauces, boolean Toasted){
-
+    public void setTopping(String topping) {
+        this.topping = topping;
     }
+
+    public void setSauces(String sauces) {
+        this.sauces = sauces;
+    }
+
+    public void setToasted(String toasted) {
+        this.toasted = toasted;
+    }
+    // Decided to only have the call method in the sandwich class.
+
 
 
 /*Regulars are free (does not need variables) will ask user what toppings they want in a do while loop
