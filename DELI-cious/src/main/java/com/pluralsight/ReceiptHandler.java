@@ -18,7 +18,7 @@ public class ReceiptHandler {
 
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
                 writer.write(sandwich.getBread() + sandwich.getSize() + sandwich.getTopping() +
-                        sandwich.getTopping());
+                        sandwich.getPrmTopping());
             }
 
             System.out.println("Receipt Made!: " + fileName);
@@ -29,5 +29,6 @@ public class ReceiptHandler {
     }
 
 }
-//
-//
+// Current Issues:
+// For some reason it always writes null0nullnull from each time the User inputs something
+//Will have to make more packages

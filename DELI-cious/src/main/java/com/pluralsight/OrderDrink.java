@@ -14,20 +14,22 @@ public class OrderDrink {
             System.out.println("(4) Brisk");
             System.out.println("(5) Water");
             int drinkChoice = scanner.nextInt();
+            drink.setDrink(String.valueOf(drinkChoice));
+            System.out.println(drink.getDrink());
             switch (drinkChoice) {
                 case 1:
-                    System.out.println(drink.drinkChoices[0]+" Added to cart");
+                    System.out.println(drink.drinkChoices[0] +" Added to cart");
                     break;
                 case 2:
-                    System.out.println(drink.drinkChoices[1]+" Added to cart");
+                    System.out.println(drink.drinkChoices[1] +" Added to cart");
                     break;
                 case 3:
-                    System.out.println(drink.drinkChoices[2]+" Added to cart");
+                    System.out.println(drink.drinkChoices[2] +" Added to cart");
                     break;
                 case 4:
-                    System.out.println(drink.drinkChoices[3]+"Added to cart");
+                    System.out.println(drink.drinkChoices[3]+" Added to cart");
                 case 5:
-                    System.out.println(drink.drinkChoices[4]+"Added to cart");
+                    System.out.println(drink.drinkChoices[4]+" Added to cart");
                 default:
                     System.out.println("Please type one of the numbers in the parentheses! ()");
 
@@ -38,6 +40,8 @@ public class OrderDrink {
         System.out.println("(2) Medium");
         System.out.println("(3) Large");
         int drinkSize = scanner.nextInt();
+        drink.setSize(String.valueOf(drinkSize));
+        System.out.println(drink.getSize());
         switch (drinkSize){
             case 1:
                 System.out.println("Small");

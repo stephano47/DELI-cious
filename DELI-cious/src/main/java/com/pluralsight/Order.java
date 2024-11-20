@@ -53,19 +53,8 @@ public class Order {
         System.out.println("What bread would you like?");
         System.out.println("[ White ]\n" + "[ Wheat ]\n" + "[ Rye ]\n" + "[ Wrap ]\n");
         String breadChoice = scanner.nextLine();
-
-
-        if (breadChoice.equalsIgnoreCase("White") || (breadChoice.equalsIgnoreCase("W"))) {
-            System.out.println(whiteBread);//should make another variable to store the doubles
-        } else if (breadChoice.equalsIgnoreCase("Wheat") || (breadChoice.equalsIgnoreCase("Wh"))) {
-            System.out.println(wheatBread);
-        } else if (breadChoice.equalsIgnoreCase("Rye") || (breadChoice.equalsIgnoreCase("R"))) {
-            System.out.println(ryeBread);
-        } else if (breadChoice.equalsIgnoreCase("Wrap") || (breadChoice.equalsIgnoreCase("Wr"))) {
-            System.out.println(wrapBread);
-
-        }
-        sandwich.setBread(breadChoice);
+        sandwich.setBread(sandwich.toString());
+        System.out.println(sandwich.getBread());
         sizeMenu();
     }
 
@@ -100,7 +89,7 @@ public class Order {
         System.out.println("Would you like your Sandwich Toasted?");
         System.out.println("Yes\n"+"No");
         String isToasted = scanner.nextLine();
-        sandwich.setToasted(isToasted);
+        sandwich.setToasted(Boolean.parseBoolean(isToasted));
         if (isToasted.equalsIgnoreCase("Yes") || (isToasted.equalsIgnoreCase("Y"))) {
             System.out.println("Your Sandwich Will be toasted\n " + "Your Sandwich was added to cart!");//should make another variable to store the doubles
             ReceiptHandler.receiptWriter();

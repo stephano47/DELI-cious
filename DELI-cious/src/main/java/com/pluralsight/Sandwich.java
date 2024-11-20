@@ -5,8 +5,12 @@ public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
     private String bread;
     private String topping;
     private String sauces;
-    private String toasted;
+    private boolean toasted;
+    private String prmTopping;
+
+
     Sandwich(){
+        this.prmTopping = prmTopping;
         this.size = size;
         this.bread = bread;
         this.topping = topping;
@@ -18,7 +22,7 @@ public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
         return size;
     }
 
-    public String getToasted() {
+    public boolean getToasted() {
         return toasted;
     }
 
@@ -50,11 +54,17 @@ public class Sandwich { //Sandwich sizes 4" (Small), 8" (Medium) , 12" (Large)
         this.sauces = sauces;
     }
 
-    public void setToasted(String toasted) {
+    public void setToasted(boolean toasted) {
         this.toasted = toasted;
     }
-    // Decided to only have the call method in the sandwich class.
 
+    public String getPrmTopping() {
+        return prmTopping;
+    }
+
+    public void setPrmTopping(String prmTopping) {
+        this.prmTopping = prmTopping;
+    }
 
 
 /*Regulars are free (does not need variables) will ask user what toppings they want in a do while loop

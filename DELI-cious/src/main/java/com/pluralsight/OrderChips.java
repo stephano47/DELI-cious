@@ -13,6 +13,8 @@ public class OrderChips {
             System.out.println("(2)"+ chips.chipChoices[1]);
             System.out.println("(3)"+chips.chipChoices[2]);
             int chipChoice = scanner.nextInt();
+            chips.setChips(String.valueOf(chipChoice));
+            System.out.println(chips.getChips());
             switch (chipChoice) {
                 case 1:
                     System.out.println(chips.chipChoices[0]+" Added to cart");
